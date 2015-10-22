@@ -6,42 +6,72 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
-    <link href="http://tomerry.github.io/mydemo/static/module/swiper/css/swiper_ccd91f3.css" rel="stylesheet" type="text/css"/>
-    <link href="http://tomerry.github.io/mydemo/static/module/normalize/normalize_30583ed.css" rel="stylesheet" type="text/css"/>
-    <link href="http://tomerry.github.io/mydemo/static/page/index/css/main_398a6b1.css" rel="stylesheet" type="text/css"/>
+    <link href="http://tomerry.github.io/mydemo/static/module/swiper/css/swiper_ccd91f3.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="http://tomerry.github.io/mydemo/static/module/normalize/normalize_30583ed.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="http://tomerry.github.io/mydemo/static/page/index/css/main_398a6b1.css" rel="stylesheet"
+          type="text/css"/>
+    <style>
+        .container {
+            visibility: visible;
+        }
+
+        .trans {
+            transition: transform, -webkit-transform 1s;
+            -webkit-transition: transform, -webkit-transform 1s;
+        }
+
+        .inUpper {
+            transform: translateY(-100%);
+            -webkit-transform: translateY(-100%);
+        }
+
+        .inCenter {
+            transform: translateY(0%);
+            -webkit-transform: translateY(0%);
+        }
+
+        .inLower {
+            transform: translateY(100%);
+            -webkit-transform: translateY(100%);
+        }
+
+    </style>
+
+    <script>
+        function touchUp($upInshown, $down) {
+            $upInshown.removeClass("inCenter inLower").addClass("inUpper");
+            $down.removeClass("inLower inUpper").addClass("inCenter");
+        }
+        function touchDown($downInshown, $up) {
+            $up.removeClass("inUpper inLower").addClass("inCenter");
+            $downInshown.removeClass("inCenter inUpper").addClass("inLower");
+        }
+    </script>
+
 </head>
 
 <body>
-<div id="skrollr-body" class="trigger">
-</div>
 <div class="container">
-    <section data-index="0"
-             data-0="transform:translateY(0%) translateZ(0);"
-             data-100="transform:translateY(-100%) translateZ(0);">
+    <section data-index="0" class="trans inCenter">
         <img src="http://tomerry.github.io/mydemo/static/page/index/images/s1/s1_bk_b2e334e.jpg"/>
     </section>
-    <section data-index="1"
-             data-0="transform:translateY(100%) translateZ(0);"
-             data-100="transform:translateY(0%) translateZ(0);"
-             data-200="transform:translateY(-100%) translateZ(0);"
-            >
+    <section class="trans inLower" data-index="1">
         <img src="http://tomerry.github.io/mydemo/static/page/index/images/s2/s2_bk_2841b05.jpg"/>
 
         <div class="btnwrapper">
             <img id="btnIntro" src="http://tomerry.github.io/mydemo/static/page/index/images/s2_btn_intro_e382ba2.png"/>
         </div>
     </section>
-    <section data-index="2"
-             data-0="transform:translateY(100%) translateZ(0);"
-             data-100="transform:translateY(100%) translateZ(0);"
-             data-200="transform:translateY(0%) translateZ(0);"
-            >
+    <section class="trans inLower" data-index="2">
         <div class="decat">
             <img class="auto" src="http://tomerry.github.io/mydemo/static/page/index/images/s3/decat_16b0f0f.png">
         </div>
         <div class="product">
             <div class="pic fr">
-                <a href="/page/detail/baymax/index.html"><img src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p1_7037c84.png"></a>
+                <a href="/mydemo/page/detail/baymax/index.html"><img
+                        src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p1_7037c84.png"></a>
             </div>
             <div class="wrapper">
                 <div class="num">
@@ -62,7 +92,8 @@
         </div>
         <div class="product">
             <div class="pic fl">
-                <a href="/page/detail/elsa/index.html"><img src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p2_b3088e8.png"></a>
+                <a href="/mydemo/page/detail/elsa/index.html"><img
+                        src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p2_b3088e8.png"></a>
             </div>
             <div class="wrapper">
                 <div class="num tr">
@@ -84,7 +115,8 @@
         </div>
         <div class="product">
             <div class="pic fr">
-                <a href="/page/detail/versa/index.html"><img src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p3_1b24ded.png"></a>
+                <a href="/mydemo/page/detail/versa/index.html"><img
+                        src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p3_1b24ded.png"></a>
             </div>
             <div class="wrapper">
                 <div class="num">
@@ -105,7 +137,8 @@
         </div>
         <div class="product">
             <div class="pic fl">
-                <a href="/page/detail/mickey/index.html"> <img src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p4_251bd3e.png"></a>
+                <a href="/mydemo/page/detail/mickey/index.html"> <img
+                        src="http://tomerry.github.io/mydemo/static/page/index/images/s3/p4_251bd3e.png"></a>
             </div>
             <div class="wrapper">
                 <div class="num tr">
@@ -139,8 +172,43 @@
 </div>
 
 <script src="http://tomerry.github.io/mydemo/static/module/zepto/zepto_b7016d3.js"></script>
-<script src="http://tomerry.github.io/mydemo/static/module/skrollr/skrollr_2f4958e.js"></script>
-<script src="http://tomerry.github.io/mydemo/static/js/util_b3df6b7.js"></script>
-<script src="http://tomerry.github.io/mydemo/static/page/index/js/main_1eea2ab.js"></script>
+<script>
+    //todo 详情页图片可能加载不出来，lazyload不管用。点击的时候跳跃加MINIHEIGHT。
+    //todo 首页touchmove不能新起方法。用心的动画效果。
+
+    window.scrollTo(0, 1);
+    var initX = 0, initY = 0, isScrollZero = !0, calcMovement = function (i) {
+        var n = i.changedTouches[0], t = n.clientX, o = n.clientY, e = 0, c = null;
+        return Math.abs(t - initX) < 20 && (e = o - initY, Math.abs(e) > 20 && (c = e > 0 ? "down" : "up")), {
+            movedY: e,
+            direction: c
+        }
+    }, setTouchInit = function (i) {
+        var n = i.changedTouches[0];
+        initX = n.clientX, initY = n.clientY, isScrollZero = i.target.scrollTop > 0 ? !1 : !0
+    }, _tf = null;
+    $("section").on("touchstart", function (i) {
+        i.changedTouches[0];
+        setTouchInit(i)
+    }).on("touchmove", function (i) {
+        var n = $(this), t = n.attr("data-index");
+        var n, o = +t;
+        n = calcMovement(i);
+        2 != t ? n.direction && ("up" == n.direction ? o++ : o--) : 0 == this.scrollTop && isScrollZero && n.movedY >10 && (o = 1);
+        if (o >= 0 && o != t) {
+            console.log("section[data-index='" + o + "']");
+            //todo new add
+            window["touch" + ("up" == n.direction ? "Up" : "Down")]($("section[data-index='" + t + "']"), $("section[data-index='" + o + "']"));
+        }
+        2 == o ? $(".footer").hide() : $(".footer").show();
+    }), $("#btnIntro").on("click", function () {
+        $(".letter").show()
+    }), $(".letter").delegate(".close", "click", function () {
+        $(".letter").hide()
+    }), setTimeout(function () {
+        $(".container").css({visibility: "visible"})
+    }, 100);
+</script>
+
 </body>
 </html>
