@@ -18,23 +18,25 @@
         }
 
         .trans {
-            transition: transform,-webkit-transform 1s;
-            -webkit-transition: transform,-webkit-transform 1s;
+            transition: transform, -webkit-transform 0.1s linear;
+            -webkit-transition: transform, -webkit-transform 1s;
+            transform: translateZ(0);
+            transform-origin: center bottom 0px;
         }
 
         .inUpper {
-           transform: translateY(-100%) translateZ(0);
-            -webkit-transform: translateY(-100%) translateZ(0);
+            transform: translateY(-100%);
+            -webkit-transform: translateY(-100%);
         }
 
         .inCenter {
-            transform: translateY(0%) translateZ(0);
-            -webkit-transform: translateY(0%) translateZ(0);
+            transform: translateY(0%);
+            -webkit-transform: translateY(0%);
         }
 
         .inLower {
-             transform: translateY(100%) translateZ(0);
-            -webkit-transform: translateY(100%) translateZ(0);
+            transform: translateY(100%);
+            -webkit-transform: translateY(100%);
         }
 
     </style>
@@ -170,6 +172,56 @@
         <span></span>
     </div>
 </div>
+<style>
+    #audio_btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 200;
+        display: none;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+    }
+    .rotate {
+        -webkit-animation: rotating 1.2s linear infinite;
+        -moz-animation: rotating 1.2s linear infinite;
+        -o-animation: rotating 1.2s linear infinite;
+        animation: rotating 1.2s linear infinite;
+    }
+    @-webkit-keyframes rotating {
+        from {
+            -webkit-transform: rotate(0deg)
+        }
+
+        to {
+            -webkit-transform: rotate(360deg)
+        }
+    }
+
+    @keyframes rotating {
+        from {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(360deg)
+        }
+    }
+
+    @-moz-keyframes rotating {
+        from {
+            -moz-transform: rotate(0deg)
+        }
+
+        to {
+            -moz-transform: rotate(360deg)
+        }
+    }
+</style>
+<div id="audio_btn" class="off video_exist rotate" style="display: block;">
+    <audio loop="" src="http://res.eqxiu.com/group1/M00/5D/E7/yq0KXFYblSyADQZRAD5nbN3il-A615.mp3" id="media" autoplay="" preload=""></audio>
+</div>
 
 <script src="http://tomerry.github.io/mydemo/static/module/zepto/zepto_b7016d3.js"></script>
 <script>
@@ -194,7 +246,7 @@
         var n = $(this), t = n.attr("data-index");
         var n, o = +t;
         n = calcMovement(i);
-        2 != t ? n.direction && ("up" == n.direction ? o++ : o--) : 0 == this.scrollTop && isScrollZero && n.movedY >10 && (o = 1);
+        2 != t ? n.direction && ("up" == n.direction ? o++ : o--) : 0 == this.scrollTop && isScrollZero && n.movedY > 10 && (o = 1);
         if (o >= 0 && o != t) {
             console.log("section[data-index='" + o + "']");
             //todo new add
