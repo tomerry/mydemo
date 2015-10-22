@@ -18,23 +18,23 @@
         }
 
         .trans {
-            transition: top 1s;
-            -webkit-transition: top 1s;
+            transition: transform,-webkit-transform 1s;
+            -webkit-transition: transform,-webkit-transform 1s;
         }
 
         .inUpper {
-            top:-100%!important;
-            -webkit-transform: translateY(0);
+           transform: translateY(-100%) translateZ(0);
+            -webkit-transform: translateY(-100%) translateZ(0);
         }
 
         .inCenter {
-             top:0%!important;
-            -webkit-transform: translateY(0);
+            transform: translateY(0%) translateZ(0);
+            -webkit-transform: translateY(0%) translateZ(0);
         }
 
         .inLower {
-             top:100%!important;
-            -webkit-transform: translateY(0);
+             transform: translateY(100%) translateZ(0);
+            -webkit-transform: translateY(100%) translateZ(0);
         }
 
     </style>
