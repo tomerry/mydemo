@@ -18,23 +18,23 @@
         }
 
         .trans {
-            transition: transform, -webkit-transform 1s;
-            -webkit-transition: transform, -webkit-transform 1s;
+            transition: top 1s;
+            -webkit-transition: top 1s;
         }
 
         .inUpper {
-            transform: translateY(-100%) translateZ(0);
-            -webkit-transform: translateY(-100%) translateZ(0);
+            top:-100%;
+            -webkit-transform: translateY(0);
         }
 
         .inCenter {
-            transform: translateY(0%) translateZ(0);
-            -webkit-transform: translateY(0%) tranlateZ(0);
+             top:0%;
+            -webkit-transform: translateY(0);
         }
 
         .inLower {
-            transform: translateY(100%) translateZ(0);
-            -webkit-transform: translateY(100%) tranlateZ(0);
+             top:100%;
+            -webkit-transform: translateY(0);
         }
 
     </style>
