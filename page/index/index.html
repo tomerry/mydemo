@@ -177,7 +177,7 @@
         position: absolute;
         right: 20px;
         top: 20px;
-        z-index: 200;
+        z-index: 2000;
         display: none;
         width: 30px;
         height: 30px;
@@ -188,6 +188,11 @@
         -moz-animation: rotating 1.2s linear infinite;
         -o-animation: rotating 1.2s linear infinite;
         animation: rotating 1.2s linear infinite;
+    }
+    .off {
+        background-image: url(http://as.eqxiu.com/view/images/normalmusic.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
     }
     @-webkit-keyframes rotating {
         from {
@@ -239,6 +244,9 @@
         var n = i.changedTouches[0];
         initX = n.clientX, initY = n.clientY, isScrollZero = i.target.scrollTop > 0 ? !1 : !0
     }, _tf = null;
+    $(document).on("touchmove",function(){
+
+    })
     $("section").on("touchstart", function (i) {
         i.changedTouches[0];
         setTouchInit(i)
