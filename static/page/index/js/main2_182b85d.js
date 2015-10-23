@@ -1,0 +1,1 @@
+window.scrollTo(0,1);var swiper=new Swiper(".swiper-container",{direction:"vertical"});$("#btnIntro").on("click",function(){$(".letter").show()}),$(".letter").delegate(".close","click",function(){$(".letter").hide()});
